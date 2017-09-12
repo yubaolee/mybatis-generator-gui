@@ -153,6 +153,12 @@ public class MybatisGeneratorBridge {
                 pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.MySQLLimitPlugin");
                 context.addPluginConfiguration(pluginConfiguration);
             }
+            else if(DbType.SQL_Server.name().equals(selectedDatabaseConfig.getDbType())){
+                PluginConfiguration pluginConfiguration = new PluginConfiguration();
+                pluginConfiguration.addProperty("type", "com.zzg.mybatis.generator.plugins.SqlServerLimitPlugin");
+                pluginConfiguration.setConfigurationType("com.zzg.mybatis.generator.plugins.SqlServerLimitPlugin");
+                context.addPluginConfiguration(pluginConfiguration);
+            }
         }
         context.setTargetRuntime("MyBatis3");
 
