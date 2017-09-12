@@ -64,6 +64,13 @@ public class MybatisGeneratorBridge {
         tableConfig.setTableName(generatorConfig.getTableName());
         tableConfig.setDomainObjectName(generatorConfig.getDomainObjectName());
 
+        if(!generatorConfig.isUseExampe()) {
+                      tableConfig.setUpdateByExampleStatementEnabled(false);
+                      tableConfig.setCountByExampleStatementEnabled(false);
+                      tableConfig.setDeleteByExampleStatementEnabled(false);
+                      tableConfig.setSelectByExampleStatementEnabled(false);
+                   }
+
         // 针对 postgresql 单独配置
         if (DbType.valueOf(selectedDatabaseConfig.getDbType()).getDriverClass() == "org.postgresql.Driver") {
             tableConfig.setDelimitIdentifiers(true);

@@ -14,6 +14,8 @@ public class GeneratorConfig {
 	 */
 	private String name;
 
+	private boolean useExampe;
+
 	private String connectorJarPath;
 
 	private String projectFolder;
@@ -190,5 +192,13 @@ public class GeneratorConfig {
 
 	public void setGenerateKeys(String generateKeys) {
 		this.generateKeys = generateKeys;
+	}
+
+	public boolean isUseExampe() {
+		return useExampe;
+	}
+
+	public void setUseExampe(boolean useExampe) {
+		this.useExampe = useExampe;
 	}
 }

@@ -45,6 +45,8 @@ public class MainUIController extends BaseFXController {
     @FXML
     private Label configsLabel;
     @FXML
+    private CheckBox useExample;
+    @FXML
     private TextField modelTargetPackage;
     @FXML
     private TextField mapperTargetPackage;
@@ -303,6 +305,7 @@ public class MainUIController extends BaseFXController {
         generatorConfig.setComment(commentCheckBox.isSelected());
         generatorConfig.setNeedToStringHashcodeEquals(needToStringHashcodeEquals.isSelected());
         generatorConfig.setAnnotation(annotationCheckBox.isSelected());
+        generatorConfig.setUseExampe(useExample.isSelected());
         generatorConfig.setUseActualColumnNames(useActualColumnNamesCheckbox.isSelected());
         return generatorConfig;
     }
